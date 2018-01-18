@@ -1,0 +1,28 @@
+{
+  "name": "Youtube Downloader",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Download Youtube video on just a click",
+  "homepage_url": "http://shuvam07.github.io/td",
+  "browser_action": {
+   "default_icon": "logo.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "matches": ["*://www.youtube.com/*"],
+    "persistent": false
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["jquery-3.2.1.min.js", "content.js"] ,
+      "run_at":"document_end"
+    }
+  ],
+  "permissions" : [
+  	"activeTab",
+  	"tabs","*://www.youtube.com/*"
+  ]
+ }

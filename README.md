@@ -1,0 +1,1 @@
+This extension will help you download a youtube video on just a click to your local disk.
