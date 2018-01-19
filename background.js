@@ -1,12 +1,16 @@
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    var url = tab.url;
-    // if (changeInfo.url !== undefined && info.status == "loading" && url !== null) {
-    	chrome.tabs.sendMessage(tab.id, "Changed");
-    // }
-});
-chrome.tabs.onCreated.addListener(function(tabId, changeInfo, tab) {
+// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 //     var url = tab.url;
-//     if (info.status == "complete" && url !== null) {
-    	chrome.tabs.sendMessage(tab.id, "Changed");
-//     }
-});
+//     // if (changeInfo.url !== undefined && info.status == "loading" && url !== null) {
+//     	chrome.tabs.sendMessage(tab.id, "Changed");
+//     // }
+// });
+// chrome.tabs.onCreated.addListener(function(tabId, changeInfo, tab) {
+// //     var url = tab.url;
+// //     if (info.status == "complete" && url !== null) {
+//     	chrome.tabs.sendMessage(tab.id, "Changed");
+// //     }
+// });
+chrome.runtime.onMessage.addListener(function(response,resolve,send){
+	var url = response;
+	// window.open(url);
+})
