@@ -10,19 +10,24 @@
 
   "background": {
     "scripts": ["background.js"],
-    "matches": ["*://www.youtube.com/*"],
+    "matches": ["*://www.youtube.com/watch*"],
     "persistent": false
   },
   
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
+      "matches": ["*://www.youtube.com/watch*"],
       "js": ["jquery-3.2.1.min.js", "content.js"] ,
       "run_at":"document_end"
     }
   ],
   "permissions" : [
   	"activeTab",
-  	"tabs","*://www.youtube.com/*"
+  	"tabs",
+    "*://www.youtube.com/*",
+    "*://www.ssyoutube.com/*",
+    "*://savefrom.net/*",
+    "*://en.savefrom.net/*"
+
   ]
  }
