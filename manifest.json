@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Download Youtube video on just a click",
-  "homepage_url": "http://shuvam07.github.io/td",
+  "homepage_url": "https://github.com/shuvam07/YDownloader",
   "browser_action": {
    "default_icon": "logo.png"
   },
 
-  "background": {
+   "background": {
     "scripts": ["background.js"],
     "matches": ["*://www.youtube.com/watch*"],
     "persistent": false
@@ -17,11 +17,12 @@
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/watch*"],
-      "js": ["jquery-3.2.1.min.js", "content.js"] ,
+      "js": ["jquery-3.2.1.min.js", "content.js"],
       "run_at":"document_end"
     }
   ],
   "permissions" : [
+    "alarms",
   	"activeTab",
   	"tabs",
     "*://www.youtube.com/*",
